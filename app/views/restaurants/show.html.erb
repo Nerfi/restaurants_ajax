@@ -1,6 +1,7 @@
 <h1><%= @restaurant.name %>
   <br>
- <small><%= @restaurant.address %></small></h1>
+  <%= image_tag("ajax_img",:size => "300x400")%>
+ <small><%= @restaurant.address %></s+mall></h1>
 <h2>
   <%= pluralize @restaurant.reviews.size, "review" %>
 </h2>
@@ -15,4 +16,5 @@
   <% end %>
 </div>
 <%= render 'reviews/form', restaurant: @restaurant, review: @review %>
+
 

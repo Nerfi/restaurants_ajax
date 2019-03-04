@@ -1,10 +1,21 @@
 <h1> Restaurants Made By Juanako</h1>
 <ul>
   <% @restaurants.each do |restaurant| %>
-  <li>
+  <li data-restaurant-id="<%= restaurant.id %>">
 
     <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    <!-- este link_to no funciona si no usamos lo mismo que hemos usasado en la linea 16 -->
     <%= link_to "Delete", restaurant, method: :delete, remote: true %>
   </li>
+  <% end %>
+</ul>
+
+<!-- if we want to use  a 'ĺink_to' we can use it but using this technique -->
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li data-restaurant-id="<%= restaurant.id %>">
+      <%= restaurant.name %>
+      <%= link_to "Delete", restaurant, method: :delete, remote: true %>
+    </li>
   <% end %>
 </ul>
