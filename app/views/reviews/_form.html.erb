@@ -1,4 +1,4 @@
-<%= simple_form_for([restaurant,review]) do |form| %>
+<%= simple_form_for([restaurant,review], remote: true) do |form| %> <!-- very important that line to add the remote with ajax -->
 <%= form.input :content, as: :text %>
 <%= form.button :submit %>
 <% end %>
