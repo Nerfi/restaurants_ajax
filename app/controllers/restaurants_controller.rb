@@ -10,4 +10,11 @@ class RestaurantsController < ApplicationController
   @review = Review.new # we need this line now
 
  end
+
+ def destroy
+  @restaurant = Restaurant.find(params[:id])
+  @restaurant.destroy
+
+ end
+
 end
